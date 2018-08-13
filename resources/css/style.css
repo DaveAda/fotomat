@@ -8,9 +8,6 @@ html {
 .main-content {
   position: relative;
   top: 5.3125rem; /* To offset for fixed header. */
-  background-image: url("../images/banner-landingpage.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .center {
@@ -29,8 +26,7 @@ html {
 
 .image-container img {
   display: block;
-  width: 90%;
-  margin: 0 auto;
+  max-width: 100%;
 }
 
 @media only screen and (max-width: 760px) {
@@ -43,7 +39,7 @@ html {
 
 header {
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   width: 100%;
   border-bottom: solid 1px #c6c1c1;
   background-color: white;
@@ -57,8 +53,6 @@ header .content {
 
 header .logo {
   flex: 1;
-  font-family: "Courier New";
-  font-size: 28px;
 }
 
 header nav ul {
@@ -77,9 +71,8 @@ nav a {
 }
 
 header .icon {
-  width: 1.4rem;
+  width: 1rem;
   padding-left: .75rem;
-
 }
 
 header .mobile {
@@ -124,12 +117,18 @@ header .mobile {
 #sign-up-section {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   height: 43.5rem;
-  margin-left: 100px;
+  background-image: url('../images/banner-landingpage.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #sign-up-cta {
+  position: relative;
+  top: 171px;
+  left: 10%;
   padding: 0 5rem 2.5rem 5rem;
   border: solid 1px #979797;
   border-radius: 4px;
@@ -222,14 +221,14 @@ header .mobile {
 #features-section {
   display: flex;
   justify-content: space-between;
-  padding-top: 64px;
-  padding-bottom: 46px;
+  padding: 4rem 5%;
   background-color: #f3f3f3;
 }
 
 .feature {
-  padding: 70px 0;
-  margin: 0px 38px;
+  flex: 1;
+  padding: 2rem;
+  margin: 0px 1.25rem;
   background-color: white;
 }
 
@@ -239,12 +238,12 @@ header .mobile {
   margin: 0 auto;
 }
 
-.feature .content{
-  height: 155px;
+.feature .content {
+  padding: 2.5rem 0;
 }
+
 .feature h2 {
   padding-bottom: .5rem;
-  padding-top: 40px;
   font-size: 2.25rem;
   font-weight: bold;
   color: #4a4a4a;
@@ -280,6 +279,10 @@ header .mobile {
     margin: 0;
     padding: 1.25rem 1rem 0 1rem;
   }
+
+  .feature .content {
+    padding: 1.25rem 0 1.875rem 0;
+  }
 }
 
 /* Filters Section */
@@ -295,7 +298,7 @@ header .mobile {
 }
 
 #filters-section .content h2 {
-  font-size: 40px;
+  font-size: 2.25rem;
   font-weight: bold;
   color: white;
 }
@@ -305,11 +308,11 @@ header .mobile {
   line-height: 1.4;
   font-weight: 300;
   color: white;
-  margin-top: 15px;
 }
 
 #filters-section .images-container {
   display: flex;
+  max-width: 100%;
   padding: 0 1%;
 }
 
@@ -346,10 +349,7 @@ header .mobile {
 /* Quotes Section */
 
 #quotes-section {
-  display: flex
-  justify-content: center;
   background-color: #f3f3f3;
-  height: 200px;
 }
 
 #quotes-section .content {
@@ -365,21 +365,21 @@ header .mobile {
   color: #4a4a4a;
 }
 
-#quotes-section quote-citation {
+#quotes-section .quote-citation {
   height: 1.875rem;
 }
 
 @media only screen and (max-width: 760px) {
-  #quotes-section content {
+  #quotes-section .content {
     padding: 1.875rem .625rem;
   }
 
-  #quotes-section quote {
+  #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
   }
 
-  #quotes-section quote-citation {
+  #quotes-section .quote-citation {
     display: block;
     padding-top: 1rem;
     margin: auto;
@@ -396,18 +396,14 @@ footer {
 footer .content {
   color: white;
   display: flex;
+  font-size: .75rem;
 }
 
 footer .copyright {
   flex-grow: 1;
-  font-size: 12px;
 }
 
-footer .location{
-  font-size: 12px;
-}
-
-@media only screen and (min-width: 760px) {
+@media only screen and (max-width: 760px) {
   footer .content {
     font-size: .625rem;
   }
